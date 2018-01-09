@@ -6,7 +6,7 @@ using UnrealBuildTool;
 public class libzmq : ModuleRules
 {
     //public libzmq(TargetInfo Target)
-    public libzmq(ReadOnlyTargetRules Target)
+    public libzmq(ReadOnlyTargetRules Target) : base(Target)
     {
         Type = ModuleType.External;
 
@@ -18,9 +18,10 @@ public class libzmq : ModuleRules
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
             // Add the import library
-            //PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "dynamic"));
-            PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "static"));
-            PublicAdditionalLibraries.Add("libzmq.lib");
+            PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "x64", "Release", "v141", "dynamic"));
+            //PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "x64", "Release", "v141", "static"));
+						
+			PublicAdditionalLibraries.Add("libzmq.lib");
 
             // Delay-load the DLL, so we can load it from the right place first
             //PublicDelayLoadDLLs.Add("libzmq.dll");

@@ -6,7 +6,7 @@ using UnrealBuildTool;
 public class flatbuffers : ModuleRules
 {
     //public libzmq(TargetInfo Target)
-    public flatbuffers(ReadOnlyTargetRules Target)
+    public flatbuffers(ReadOnlyTargetRules Target) : base(Target)
     {
         Type = ModuleType.External;
 

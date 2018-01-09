@@ -5,7 +5,7 @@ using UnrealBuildTool;
 
 public class libsodium : ModuleRules
 {
-	public libsodium(ReadOnlyTargetRules Target)
+	public libsodium(ReadOnlyTargetRules Target) : base(Target)
 	{
 		Type = ModuleType.External;
 
@@ -18,9 +18,11 @@ public class libsodium : ModuleRules
 		{
 			// Add the import library
 			//PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "dynamic"));
-			//PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "ltcg"));
-			
+			//PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "ltcg"));			
 			PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "static"));
+			
+			PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "x64", "Release", "v141", "static"));
+			
 			PublicAdditionalLibraries.Add("libsodium.lib");
 
 			// Delay-load the DLL, so we can load it from the right place first

@@ -5,7 +5,7 @@ using UnrealBuildTool;
 
 public class czmq : ModuleRules
 {
-	public czmq(ReadOnlyTargetRules Target)
+	public czmq(ReadOnlyTargetRules Target) : base(Target)
 	{
 		Type = ModuleType.External;
 
@@ -17,7 +17,7 @@ public class czmq : ModuleRules
         if (Target.Platform == UnrealTargetPlatform.Win64)
 		{
             // Add the import library
-            PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "bin", "x64", "Release", "v141", "static"));
+            PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "x64", "Release", "v141", "static"));
             PublicAdditionalLibraries.Add("libczmq.lib");
 
 			// Delay-load the DLL, so we can load it from the right place first
