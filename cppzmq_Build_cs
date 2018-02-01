@@ -5,7 +5,7 @@ using UnrealBuildTool;
 
 public class cppzmq : ModuleRules
 {
-	public cppzmq(ReadOnlyTargetRules Target)
+	public cppzmq(ReadOnlyTargetRules Target) : base(Target)
 	{
 		Type = ModuleType.External;
 		
